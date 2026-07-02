@@ -1,0 +1,33 @@
+# ---- Copyrighted third-party assets: never commit ----
+# The audio and texture are anime/game IP (JoJo, Fate soundtrack clips,
+# character theming). Only my own Lua code belongs in this repo.
+# The addon references these paths; run the Steam Workshop version to play.
+sound/
+materials/
+*.mp3
+*.wav
+*.ogg
+*.png
+*.jpg
+*.jpeg
+*.vtf
+*.vmt
+*.mdl
+*.vtx
+*.vvd
+*.phy
+
+# ---- GMod / build junk ----
+*.gma
+*.bsp.bak
+
+# ---- Editor / OS junk ----
+*.swp
+*.swo
+*.save
+*.bak
+*~
+.DS_Store
+
+# ---- Empty scaffolding ----
+lua/autorun/client/test.lua
