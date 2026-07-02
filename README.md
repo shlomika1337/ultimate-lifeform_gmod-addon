@@ -2,9 +2,20 @@
 
 A Garry's Mod weapon (SWEP) written in Lua, published on the Steam Workshop. It turns the player into an over-the-top "ultimate lifeform" with a roster of scripted abilities: laser eyes, a time-stop prop-kill, powered flight, an object pickup-and-throw mechanic, and health-driven music states.
 
-Steam Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=2839481410
+It was published on the Steam Workshop, where it reached roughly **8,900 subscribers** and **15,900 unique visitors**, with a 4-star rating across 176 ratings and 611 favorites. I maintained it actively after release (31 change notes over the update run), fixing issues and responding to player feedback in the comments.
+
+The Workshop version was later removed by Steam because it bundled copyrighted third-party audio (anime and game soundtrack clips). That is exactly why this repository contains only my own code, with those assets left out. Workshop page (now delisted): https://steamcommunity.com/sharedfiles/filedetails/?id=2839481410
 
 I wrote this by hand, before AI coding assistants were useful for this kind of work. It is a self-taught project against Garry's Mod's Lua API, which is sparsely documented, so most of it came from reading the engine's function reference and a lot of trial and error on a live server.
+
+## What it demonstrates (technically)
+
+- Garry's Mod client/server model: the `CLIENT` / `SERVER` split, sound and effect broadcasting, and precaching of assets.
+- The entity and physics API: trace lines, `ApplyForceCenter`, blast damage, world-bounds checks, and prop spawning/manipulation.
+- HUD and rendering: custom fonts and on-screen drawing on the client.
+- Event-driven structure: per-tick `Think` logic, primary/secondary attack handlers, and heavy use of GMod's hook system (`PlayerShouldTakeDamage`, `HUDPaint`, `GetFallDamage`, `PlayerDeathThink`) to override engine behavior, with matching teardown when the weapon is holstered.
+- World-to-screen projection for the ESP overlay, and probabilistic event interception for the dodge mechanic.
+- Roughly 1,000 lines of Lua managing state across a networked multiplayer game.
 
 ## What it does
 
@@ -17,18 +28,9 @@ I wrote this by hand, before AI coding assistants were useful for this kind of w
 - **Chaos abilities**: simulated AC-130 and A-10 strafing runs (blast damage, explosions, screen shake, near-miss bullet audio), random lightning strikes traced from the sky, and a rotating list of ragdoll/prop models flung around for effect.
 - **Health-driven state**: the weapon tracks the player's HP and swaps background music, dodge chance, and behavior when low.
 
-## What it demonstrates (technically)
-
-- Garry's Mod client/server model: the `CLIENT` / `SERVER` split, sound and effect broadcasting, and precaching of assets.
-- The entity and physics API: trace lines, `ApplyForceCenter`, blast damage, world-bounds checks, and prop spawning/manipulation.
-- HUD and rendering: custom fonts and on-screen drawing on the client.
-- Event-driven structure: per-tick `Think` logic, primary/secondary attack handlers, and heavy use of GMod's hook system (`PlayerShouldTakeDamage`, `HUDPaint`, `GetFallDamage`, `PlayerDeathThink`) to override engine behavior, with matching teardown when the weapon is holstered.
-- World-to-screen projection for the ESP overlay, and probabilistic event interception for the dodge mechanic.
-- Roughly 1,000 lines of Lua managing state across a networked multiplayer game.
-
 ## Assets not included
 
-The original Workshop version ships with audio and a texture that are copyrighted third-party material (anime and game soundtrack clips, character theming). Those are **not** included in this repository. Only my own code is here. The addon references the assets by the paths listed in `lua/autorun/server/init.lua`; to run it as published, use the Steam Workshop version linked above.
+The audio and texture the original addon shipped with are copyrighted third-party material (anime and game soundtrack clips, character theming), and were the reason the Workshop version was delisted. They are **not** included here. Only my own code is in this repository. The addon references those assets by the paths listed in `lua/autorun/server/init.lua`.
 
 ## Layout
 
@@ -41,4 +43,3 @@ addon.json                         -- Workshop addon manifest
 ## Note
 
 Published on the Workshop under the author name "nativ" (me).
-
