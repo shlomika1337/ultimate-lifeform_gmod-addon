@@ -4,7 +4,7 @@ A Garry's Mod weapon (SWEP) written in Lua, published on the Steam Workshop. It 
 
 It was published on the Steam Workshop, where it reached roughly **8,900 subscribers** and **15,900 unique visitors**, with a 4-star rating across 176 ratings and 611 favorites. I maintained it actively after release (31 change notes over the update run), fixing issues and responding to player feedback in the comments.
 
-The Workshop version was later removed by Steam because it bundled copyrighted third-party audio (anime and game soundtrack clips). That is exactly why this repository contains only my own code, with those assets left out. Workshop page (now delisted): https://steamcommunity.com/sharedfiles/filedetails/?id=2839481410
+This repository contains only my own code, with the bundled copyrighted third-party audio (anime and game soundtrack clips) assets left out. Workshop page: https://steamcommunity.com/sharedfiles/filedetails/?id=2839481410
 
 I wrote this by hand, before AI coding assistants were useful for this kind of work. It is a self-taught project against Garry's Mod's Lua API, which is sparsely documented, so most of it came from reading the engine's function reference and a lot of trial and error on a live server.
 
