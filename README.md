@@ -42,4 +42,4 @@ addon.json                         -- Workshop addon manifest
 
 ## Note
 
-Published on the Workshop under the author name "nativ" (me).
+Published on the Workshop under the author name "native" (me).
